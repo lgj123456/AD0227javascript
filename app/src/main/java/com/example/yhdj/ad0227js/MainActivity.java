@@ -10,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.SmsManager;
+import android.util.Log;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
@@ -107,9 +108,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "电话号码不能为空！！！", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (!isCanCall){
-            return;
-        }
+//        if (!isCanCall){
+//            return;
+//        }
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_CALL);
         intent.setData(Uri.parse("tel:" + num));
@@ -125,15 +126,16 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "电话号码和短信内容不能为空！！！", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (!isCanSendMsg){
-            return;
-        }
+//        if (!isCanSendMsg){
+//            return;
+//        }
         SmsManager smsManager = SmsManager.getDefault();
         ArrayList<String> list = smsManager.divideMessage(msg);
         for(String text : list){
             smsManager.sendTextMessage(num,null,text,null,null);
         }
-        Toast.makeText(this, "消息发送完成！！！", Toast.LENGTH_SHORT).show();
+        Log.d("msg", "sendMsg:消息发送完成！！！ ");
+        Toast.makeText(this, "消息发送完成！！！", Toast.LENGTH_LONG).show();
 
     }
 
