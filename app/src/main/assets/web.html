@@ -23,6 +23,7 @@
     }
 
 
+
     </script>
 </head>
 
@@ -37,8 +38,9 @@ HTML内容显示<br>
 <input type="button" value="点击调用JAVA代码并传递参数"
        onclick="window.android.startFunction('http://blog.csdn.net/Leejizhou')"><br>
 <label for="num">请输入你的电话号码：</label><input type="number" maxlength="11" id="num"
-                                          onblur="callNum()"><br>
-<label for="msg">请输入你要发送的信息：</label><textarea rows="10" cols="60" id="msg" onblur="msgText()"></textarea>
+                                          onblur="callNum()" required><br>
+<label for="msg">请输入你要发送的信息：</label><textarea rows="10" cols="60" id="msg"
+                                              onblur="msgText()"></textarea>
 <input type="button" value="打电话" onclick="window.android.call(num)">
 <input type="button" value="发短信" onclick="window.android.sendMsg(num,msgContent)">
 </body>

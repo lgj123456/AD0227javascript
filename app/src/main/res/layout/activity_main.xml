@@ -5,8 +5,8 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_marginTop="5dp"
+    android:orientation="vertical"
     tools:context="com.example.yhdj.ad0227js.MainActivity">
 
     <TextView
@@ -15,17 +15,17 @@
         android:text="android"/>
 
     <Button
+        android:id="@+id/btn_js1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="调用js"
-        android:id="@+id/btn_js1"
         />
 
     <Button
+        android:id="@+id/btn_js2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="调用有参js"
-        android:id="@+id/btn_js2"
         />
 
     <TextView
@@ -35,9 +35,9 @@
         />
 
     <WebView
+        android:id="@+id/webView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/webView"
         >
 
 
