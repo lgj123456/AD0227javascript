@@ -5,11 +5,14 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -74,5 +77,18 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_CALL);
         intent.setData(Uri.parse("tel:" + num));
+        startActivity(intent);
     }
+
+    @JavascriptInterface
+    public void sendMsg(String num, String msg){
+        SmsManager smsManager = SmsManager.getDefault();
+        ArrayList<String> list = smsManager.divideMessage(msg);
+        for(String text : list){
+            smsManager.sendTextMessage(num,null,text,null,null);
+        }
+        Toast.makeText(this, "消息发送完成！！！", Toast.LENGTH_SHORT).show();
+
+    }
+
 }
