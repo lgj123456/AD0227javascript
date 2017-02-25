@@ -3,7 +3,7 @@
     <meta http-equiv="content-type" content="text/html;charset=gb2312">
 <script type="text/javascript">
     function javacalljs(){
-    document.getElementById("content")innerHTML =
+    document.getElementById("content").innerHTML =
     "<br\>java调用了js的无参函数";
     }
 
@@ -23,7 +23,7 @@ HTML内容显示<br>
 <input type="button" value="点击调用JAVA代码并传递参数" onclick="window.android.startFunction('http://blog.csdn.net/Leejizhou')"><br>
 <label for="num">请输入你的电话号码：</label><input type="number" maxlength="11" id="num"><br>
 <label for="msg">请输入你要发送的信息：</label><textarea rows="10" cols="60" id="msg"></textarea>
-<input type="button" value="打电话" onclick="" >
+<input type="button" value="打电话" onclick="window.android.call('10086')" >
 <input type="button" value="发短信" onclick="" >
 </body>
 
